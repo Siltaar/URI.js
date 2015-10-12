@@ -777,7 +777,7 @@
           } else {
             data[name] = filterArrayValues(data[name], value);
           }
-        } else if (data[name] === value) {
+        } else if (data[name] === value || (isArray(value) && data[name] === String(value[0]))) {
           data[name] = undefined;
         } else if (isArray(data[name])) {
           data[name] = filterArrayValues(data[name], value);
